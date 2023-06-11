@@ -1,0 +1,169 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("fonts/Comfortaa-Regular-1.ttf") format("woff"),
+        url("fonts/Comfortaa-Bold-2.ttf") format("woff2"),
+        url("fonts/Comfortaa-Light-3.ttf") format("woff3");
+}
+
+.topstyle {
+    color: #fdfdfd;
+    font-family: Comfortaa;
+    font-style: normal;
+    /* line-height: 5px; */
+    height: auto;
+    width: auto;
+    letter-spacing: 0.5;
+}
+
+.topstyle.day-mode {
+    color: #252525;
+}
+
+.box {
+    background-color: #252525;
+    box-shadow: 0 0px 25px #252525aa;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+}
+
+.box.day-mode {
+    background-color: #fdfdfd;
+    box-shadow: 0 0px 25px #fdfdfdaa;
+}
+
+.idlabel {
+    color: #dfdfdf;
+    background-color: #333333;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.idlabel.day-mode {
+    color: #333333;
+    background-color: #dfdfdf;
+}
+
+.smalltitle {
+    font-family: Comfortaa;
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 5px;
+    height: auto;
+    width: auto;
+    letter-spacing: 0.5;
+    font-size: 35;
+    color: #dddddd;
+    font-weight: bold;
+    text-align: right;
+}
+
+.smalltitle.day-mode {
+    color: #333333;
+}
+
+.github {
+    filter: brightness(1);
+}
+
+.github.day-mode {
+    filter: brightness(0);
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    fill: #fdfdfd;
+    color: #fdfdfd;
+    z-index: 999;
+}
+
+a {
+    color: #5aa6e9;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+a:hover {
+    color: #376e9e;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.scrollbar-content {
+    background-color: #111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    /* padding-right: 10px; */
+    overflow-y: scroll;
+}
+
+.scrollbar-content.day-mode {
+    background-color: #f0f0f0;
+}
+
+.datnightbtnstyle {
+
+    background-color: #252525;
+    border-style: hidden;
+    border: none;
+    color: #fdfdfd;
+    height: auto;
+    width: auto;
+    margin: 5px;
+    border-radius: 10px;
+    float: right;
+}
+
+.datnightbtnstyle.day-mode {
+    background-color: #fdfdfd;
+    color: #252525;
+}
+
+.bodystyle {
+    background-color: #101010;
+}
+
+.bodystyle.day-mode {
+    background-color: #fafafa;
+}
+
+.dayicon {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    z-index: 1;
+    position: absolute;
+    opacity: 1;
+}
+
+.dayicon.day-mode {
+    opacity: 0;
+}
+
+.nighticon {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    z-index: 0;
+    opacity: 0;
+}
+
+.nighticon.day-mode {
+    opacity: 1;
+}
