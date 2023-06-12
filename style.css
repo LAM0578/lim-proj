@@ -5,8 +5,12 @@
         url("fonts/Comfortaa-Light-3.ttf") format("woff3");
 }
 
+* {
+    -webkit-text-size-adjust: none;
+}
+
 .topstyle {
-    position: relative;
+    position: sticky;
     color: #fdfdfd;
     font-family: Comfortaa;
     font-style: normal;
@@ -21,17 +25,18 @@
 }
 
 .box {
-    position: relative;
     background-color: #252525;
-    box-shadow: 0 0px 25px #252525aa;
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
     padding: 15px;
     margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .box.day-mode {
     background-color: #fdfdfd;
-    box-shadow: 0 0px 25px #fdfdfdaa;
 }
 
 .idlabel {
@@ -76,24 +81,23 @@
     filter: brightness(0);
 }
 
-.mask {
-    width: 100%;
-    height: 100%;
-    fill: #fdfdfd;
-    color: #fdfdfd;
-    z-index: 999;
-}
-
 a {
     position: relative;
     color: #5aa6e9;
     text-decoration: none;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition: 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-a:hover {
-    color: #376e9e;
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        color: #376e9e;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    a:focus {
+        color: #376e9e;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -101,30 +105,30 @@ a:hover {
 }
 
 .scrollbar-container {
-    position: relative;
+    background-color: #111;
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: auto;
+    clip-path: view-box;
+}
+
+.scrollbar-container.day-mode {
+    background-color: #f0f0f0;
 }
 
 .scrollbar-content {
-    background-color: #111;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
-    bottom: -50px;
-    /* padding-right: 10px; */
-    overflow-y: scroll;
-}
-
-.scrollbar-content.day-mode {
-    background-color: #f0f0f0;
+    bottom: 0;
+    overflow: auto;
 }
 
 .datnightbtnstyle {
     background-color: #252525;
+    border-color: #252525;
     border-style: hidden;
     border: none;
     color: #fdfdfd;
@@ -137,10 +141,12 @@ a:hover {
 
 .datnightbtnstyle.day-mode {
     background-color: #fdfdfd;
+    border-color: #fdfdfd;
     color: #252525;
 }
 
 .bodystyle {
+    height: 100%;
     background-color: #101010;
 }
 

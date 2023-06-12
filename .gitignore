@@ -3,3 +3,4 @@ pyscript/
 .vs/
 temp/
 _backup/
+*.htaccess

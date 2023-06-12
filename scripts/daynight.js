@@ -7,7 +7,7 @@ const names = [
     'github',
     'datnightbtnstyle',
     'bodystyle',
-    'scrollbar-content',
+    'scrollbar-container',
     'dayicon',
     'nighticon'
 ]
@@ -35,8 +35,8 @@ function preload() {
         setDayNight();
     }
     
-    var style = document.querySelector("style")
-    style.innerHTML += '* { transition-duration: 0.25s; transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); }'
+    var style = document.querySelector("style");
+    style.innerHTML += '* { -webkit-text-size-adjust: none; transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1); }';
 }
 
 preload()
