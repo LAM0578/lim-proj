@@ -37,11 +37,13 @@ function setLigatures() {
 if (getCookie("enableLigtures") == "") {
     setCookie("enableLigtures", false, 365);
 }
-else if (!parseBool(getCookie("enableLigtures"))) {
+else if (parseBool(getCookie("enableLigtures"))) {
     setLigatures();
 }
 
+// console.log(getCookie("enableLigtures"));
+
 ligBtn.addEventListener("click", () => setLigatures());
 
-document.cookie = null;
-console.log(document.cookie);
+// document.cookie = null;
+// console.log(document.cookie);
