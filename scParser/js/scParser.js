@@ -656,6 +656,6 @@ copyBtn.addEventListener("click", () => {
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
-    showToast("Copied");
+    showToast("已复制");
 })
 
