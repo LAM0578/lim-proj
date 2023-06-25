@@ -1,0 +1,206 @@
+
+
+body {
+    /**GLOBAL**/
+
+    --animationEasing: cubic-bezier(0.215, 0.610, 0.355, 1);
+    --globalTransition: 0.25s var(--animationEasing);
+
+    font-family: Comfortaa;
+
+    letter-spacing: 0.5px;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+
+    background-color: #fff;
+
+    /**GLOBAL**/
+
+    /**VARIABLE**/
+
+    /*text*/
+    --textColor: #111111;
+    --textShadowColor: #11111120;
+    --textBlurPix: 5px;
+
+    /*textarea*/
+    --textareaShadowColor: #0000000a;
+    --textareaBlurPix: 25px;
+    --textareaBackgroundColor: #f5f5f5;
+
+    /*toast*/
+    --toastShadowColor: #00000010;
+    --toastBlurPix: 35px;
+    --toastDuration: 0.35s;
+    --toastBackgroundColor: #f0f0f0aa;
+    --toastTransition: var(--toastDuration) var(--animationEasing);
+
+    /*button*/
+    --buttonBackgroundColor: #f0f0f0;
+    --buttonHoverBackgroundColor: #d8d8d8;
+    --buttonHoverTextColor: #111111;
+
+    /*hr*/
+    --hrColor: #111;
+
+    /**VARIABLE**/
+}
+
+body.night {
+
+    background-color: #111111;
+
+    --textColor: #f0f0f0;
+    --textShadowColor: #f0f0f020;
+
+    --textareaShadowColor: #ffffff0a;
+    --textareaBackgroundColor: #202020;
+
+    --toastShadowColor: #ffffff10;
+    --toastBackgroundColor: #353535aa;
+
+    --buttonBackgroundColor: #202020;
+    --buttonHoverBackgroundColor: #d8d8d8;
+    --buttonHoverTextColor: #111111;
+
+    --hrColor: #f0f0f0;
+}
+
+label {
+    font-size: 15px;
+    font-family: Comfortaa;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+textarea {
+    font-family: 'Fira Code';
+    font-variant-ligatures: none;
+
+    font-size: 16;
+    line-height: 1.5;
+
+    position: relative;
+    padding: 10px;
+
+    background-color: var(--textareaBackgroundColor);
+    color: var(--textColor);
+    overflow: auto;
+
+    border: none;
+    border-radius: 12px;
+
+    height: 350;
+    margin: 5px;
+    width: calc(100% - 10px);
+    left: 50%;
+    transform: translateX(calc(-50% - 5px));
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: 0 0 var(--textareaBlurPix) var(--textareaShadowColor);
+    -moz-box-shadow: 0 0 var(--textareaBlurPix) var(--textareaShadowColor);
+    box-shadow: 0 0 var(--textareaBlurPix) var(--textareaShadowColor);
+
+    /* transition: background-color var(--globalTransition), color var(--globalTransition); */
+}
+
+textarea.lig {
+    font-variant-ligatures: normal;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+button {
+    font-family: Comfortaa;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    background-color: var(--buttonBackgroundColor);
+    color: var(--textColor);
+    border-radius: 12px;
+
+    height: 25px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    left: 50%;
+
+    border-style: hidden;
+    border: none;
+    outline-style: none;
+
+    box-shadow: 0 0 35px #00000010;
+    -webkit-box-shadow: 0 0 35px #00000010;
+    -moz-box-shadow: 0 0 35px #00000010;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    button:hover {
+        background-color: var(--buttonHoverBackgroundColor);
+        color: var(--buttonHoverTextColor);
+        transition: background-color var(--globalTransition), color var(--globalTransition);
+    }
+}
+
+/* @media (hover: none) and (pointer: coarse) {
+    button:focus {
+        background-color: #d8d8d8;
+    }
+} */
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50px);
+    background-color: var(--toastBackgroundColor);
+    color: var(--textColor);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    box-shadow: 0 0 var(--toastBlurPix) var(--toastShadowColor);
+    -webkit-box-shadow: 0 0 var(--toastBlurPix) var(--toastShadowColor);
+    -moz-box-shadow: 0 0 var(--toastBlurPix) var(--toastShadowColor);
+    opacity: 0;
+    font-size: 15px;
+    text-align: center;
+    transition: opacity var(--toastTransition),
+        transform var(--toastTransition),
+        backdrop-filter calc(var(--toastDuration) / 2) var(--animationEasing);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+h1,
+h5 {
+    color: var(--textColor);
+    text-shadow: 0 0 var(--textBlurPix) var(--textShadowColor);
+    -webkit-text-shadow: 0 0 var(--textBlurPix) var(--textShadowColor);
+    -moz-text-shadow: 0 0 var(--textBlurPix) var(--textShadowColor);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+hr {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+    border-style: solid;
+    color: var(--hrColor);
+    border-radius: 0.5rem;
+}

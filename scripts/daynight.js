@@ -17,12 +17,15 @@ for (const name of names) {
     elementItems.push(document.getElementsByClassName(name))
 }
 
+let isNightMode = true;
 function setDayNight() {
     for (const elements of elementItems) {
         for (i = 0; i < elements.length; i++) {
             elements.item(i).classList.toggle('day-mode');
         }
     }
+    isNightMode = !isNightMode;
+    setCookie("nightMode", isNightMode, 365);
 }
 
 const modeBtn = document.getElementById("DayNightBtn");
@@ -31,8 +34,14 @@ modeBtn.addEventListener('click', () => {
 })
 
 function preload() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        setDayNight();
+    if (window.matchMedia) {
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setDayNight();
+            setCookie("nightMode", false, 365);
+        }
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setCookie("nightMode", true, 365);
+        }
     }
     
     var style = document.querySelector("style");

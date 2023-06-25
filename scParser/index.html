@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Scenecontrol Parser</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="./firacode.css" />
+    <link rel="stylesheet" href="./confortaa.css" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <h1 style="margin: 5px;"> Scenecontrol Parser </h1>
+    <div>
+        <hr />
+        <button id="ligatures" style="width: auto;">Enable Ligatures</button>
+    </div>
+    <div>
+        <hr />
+        <b>
+            <h5 style="margin: 5px;">Content</h5>
+        </b>
+        <textarea id="raw">
+function instant() {
+    ui::Text::setString(TitleLabel, "Hello World!");
+}</textarea>
+        <button id="parse">Parse</button>
+        <hr />
+        <b>
+            <h5 style="margin: 5px;">Result</h5>
+        </b>
+        <textarea id="result"></textarea>
+        <button id="copy">Copy</button>
+    </div>
+    <div class="toast">
+        <span id="toastMessage">TOAST MESSAGE</span>
+    </div>
+    <script src="./js/helper.js"></script>
+    <script src="./js/scripts.js"></script>
+    <script src="./js/scParser.js"></script>
+    <script src="./js/customNumber.js"> // module </script>
+    <script src="./js/jsonSerialize.js"> // module </script>
+    <script src="./js/toast.js"> // module </script>
+</body>
+
+</html>
