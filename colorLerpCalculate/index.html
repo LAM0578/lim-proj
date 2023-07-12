@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color Lerp Calculate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../comfortaa.css">
+        <link rel="stylesheet" href="../firacode.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <h1 id="title">Color Lerp Calculate</h1>
+        <div class="box">
+            <div id="colorLeftDiv">
+                <label for="colorLeft" type="colorLabel">Color Left</label>
+                <input type="text" id="colorLeft" value="#ff0000" maxlength="7">
+                <div type="colorDisplay" id="colorDisplayLeft"style="background-color: #ff0000;">
+                    <input type="color" id="colorLeftPicker" value="#ff0000">
+                </div>
+            </div>
+            <div id="colorRightDiv">
+                <label for="colorRight" type="colorLabel">Color Right</label>
+                <input type="text" id="colorRight" value="#0000ff" maxlength="7">
+                <div type="colorDisplay" id="colorDisplayRight" style="background-color: #0000ff;">
+                    <input type="color" id="colorRightPicker" value="#0000ff">
+                </div>
+            </div>
+            <div id="colorLerpDiv">
+                <label for="lerpSlider" type="colorLabel">Lerp Slider</label>
+                <input type="range" id="lerpSlider" min="0" max="1000" value="0">
+                <input type="text" id="progressInput" value="0%">
+            </div>
+            <div id="resultDiv">
+                <label for="resultDisplay" type="resultLabel">Result (Click button to Copy)</label>
+                <div id="resultDisplay" style="background-color:#ff0000;"></div>
+                <button id="resultValueButton" >#ff0000</button>
+            </div>
+            <br>
+            <a href="../" id="backText">&lt;&lt; Back</a>
+        </div>
+        <script src="../scripts/helper.js"></script>
+        <script src="../scripts/customNumber.js"></script>
+        <script src="js/daynight.js"></script>
+        <script src="js/color.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

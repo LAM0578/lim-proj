@@ -8,7 +8,7 @@ class int {
      * @param {number} v Number
      */
     constructor(v) {
-        this.value = v;
+        this.value = Math.floor(v);
     }
 
     /**
@@ -177,8 +177,8 @@ class int {
         return new int(-this.value);
     }
 
-    toString() {
-        return this.value.toFixed(0);
+    toString(radix=undefined) {
+        return this.value.toString(radix);
     }
 }
 

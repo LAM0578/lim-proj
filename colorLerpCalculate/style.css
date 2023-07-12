@@ -1,0 +1,220 @@
+
+body {
+    /* GLOBAL */
+
+    --marginValue: 5px;
+
+    font-family: Comfortaa;
+
+    background-color: #fff;
+    margin: var(--marginValue);
+
+    padding: 5px;
+    
+    --realWidth: calc(100% - var(--marginValue));
+    --translateX: calc(var(--marginValue) / 2);
+
+    /* GLOBAL */
+
+    /* VARIABLE */
+    
+    --textColor: #101010;
+    --boxBackgroundColor: #f2f2f2;
+    --itemBackgroundColor: #fdfdfd;
+    --buttonHoverBackgroundColor: #dddddd;
+    --sliderThumbColor: #808080;
+
+    /* VARIABLE */
+}
+
+body.night {
+    /* GLOBAL */
+
+    background-color: #101010;
+
+    /* GLOBAL */
+
+    /* VARIABLE */
+    
+    --textColor: #d0d0d0;
+    --boxBackgroundColor: #303030;
+    --itemBackgroundColor: #202020;
+    --buttonHoverBackgroundColor: #353535;
+    --sliderThumbColor: #d0d0d0;
+
+    /* VARIABLE */
+}
+
+.box {
+    background-color: var(--boxBackgroundColor);
+
+    padding: var(--marginValue);
+    width: calc(var(--realWidth) - var(--marginValue) * 2);
+    height: auto;
+    transform: translateX(var(--translateX));
+
+    border-radius: 10px;
+}
+
+h1[id="title"] {
+    margin-top: 0px;
+    transform: translateX(var(--translateX));
+}
+
+h1, label, a, br {
+    color: var(--textColor);
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        color: #376e9e;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    a:focus {
+        color: #376e9e;
+    }
+}
+
+label[type="colorLabel"] {
+    width: 95px;
+    margin-left: 5px;
+}
+
+label[type="resultLabel"] {
+    margin-right: 15px;
+}
+
+div[id="colorLeftDiv"], [id="colorRightDiv"], [id="colorLerpDiv"] {
+    margin-top: 2.5px;
+    display: flex;
+}
+
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    height: 15px;
+
+    border: transparent;
+    border-style: hidden;
+    border-radius: 10px;
+
+    /* transform: translateY(-2.5px); */
+}
+
+div[type="colorDisplay"] {
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 100%;
+    /* background-color: #fff; */
+    margin-left: 5px;
+    z-index: 1;
+    /* transform: translateY(-1px); */
+}
+
+input[type="color"] {
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
+
+input[type="text"] {
+    font-family: 'Fira Code';
+    background-color: var(--itemBackgroundColor);
+    color: var(--textColor);
+    border-radius: 20px;
+}
+
+input[id="colorLeft"], [id="colorRight"] {
+    margin-left: 5px;
+    padding: 5px;
+    width: calc(100% - 150px);
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+input[id="lerpSlider"] {
+
+    margin-left: 5px;
+    transform: translateY(2px);
+
+    background-color: var(--itemBackgroundColor);
+
+    /* clip-path: view-box; */
+    border: none;
+}
+
+[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    background-color: var(--sliderThumbColor);
+
+}
+
+input[id="progressInput"] {
+    margin-left: 5px;
+    padding: 5px;
+    width: calc(100% - 250px);
+    /* transform: translateY(-3px); */
+}
+
+div[id="resultDiv"] {
+    display: flex;
+    width: auto;
+    height: 25px;
+    color: var(--textColor);
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+div[id="resultDisplay"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    margin-left: 5px;
+    height: 20px;
+
+    border-radius: 20px;
+
+    font-family: 'Fira Code';
+
+    background-color: var(--itemBackgroundColor);
+    color: var(--textColor);
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+    border: none;
+    border-style: none;
+}
+
+button:hover {
+    background-color: var(--buttonHoverBackgroundColor);
+}
