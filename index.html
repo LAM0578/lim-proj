@@ -1,22 +1,27 @@
-<html>
+<!DOCTYPE html/>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.75, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>END IN ENDER</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="./fonts/maple_mono_sc_nf.css"/>
     <style>
         p, a, label {
             text-overflow: ellipsis;
             white-space: nowrap;
+
+            user-select: none;
+            -webkit-user-select: none;
         }
     </style>
 </head>
 
 <body class="bodystyle">
     <div style="padding-top: 0;">
-        <label class="topstyle" style="margin-left: 5px;font-size: 37.5px;letter-spacing: 2;">
-            end in ender
+        <label class="topstyle" style="margin-left: 5px;font-size: 37.5px;letter-spacing: 2;font-weight: bold;">
+            END IN ENDER
             <button id="DayNightBtn" class="datnightbtnstyle">
                 <img class="dayicon" src="mdi/light_mode_FILL0_wght400_GRAD0_opsz48.svg"/>
                 <img class="nighticon" src="mdi/dark_mode_FILL0_wght400_GRAD0_opsz48.svg"/>
@@ -32,7 +37,7 @@
                 <hr color="#555555" size=2 style="border-radius: 1px;" />
                 <div class="topstyle">
                     <p style="font-size: 17.5">
-                        <p style="font-size: 27.5;margin-bottom: 3px;text-align: right;">
+                        <p style="font-size: 27.5;margin-bottom: 3px;text-align: right;font-weight: bold">
                             Arcaea-Cover-Maker
                         </p>
                         <a href="https://github.com/LAM0578/ArcaeaCoverMaker" style="float: right;">
@@ -40,9 +45,9 @@
                             Respository
                         </a>
                         <br/>
-                        <p style="font-size: 22.5;margin-bottom: 3px;vertical-align: bottom;">
+                        <p id="smallTitle">
                             Latest Release
-                            <label style="font-size: 15;float: right;margin-top: 5px;">
+                            <label id="smallLabel">
                                 v1.1.0
                             </label>
                         </p>
@@ -62,10 +67,10 @@
                                 Source Code (tar.gz)
                             </a>
                         </p>
-                        <p style="font-size: 22.5;margin-bottom: 3px;vertical-align: bottom;">
+                        <p id="smallTitle">
                             Other Release
                         </p>
-                        <p style="font-size: 15;float: right;margin-bottom: 8px;margin-top: -8px;">
+                        <p id="smallLabel" style="margin-top: -8px;">
                             v1.0.0
                         </p>
                         <p style="line-height: 2;font-size: 17.5;overflow:auto;">
@@ -94,7 +99,7 @@
                             <img class="github" width="16" height="16" src="images/github-mark-white.svg" style="margin-right: 10px;"/>
                             Respository
                         </a>
-                        <p style="font-size: 22.5;margin-bottom: 3px;vertical-align: bottom;">
+                        <p id="smallTitle">
                             Source Code
                         </p>
                         <p style="line-height: 2;font-size: 17.5;overflow:auto;">
@@ -113,9 +118,9 @@
                 <hr color="#555555" size=2 style="border-radius: 1px;" />
                 <div class="topstyle">
                     <p style="font-size: 17.5;">
-                        <p style="font-size: 22.5;margin-bottom: 3px;">
+                        <p id="smallTitle">
                             Latest Release
-                            <label style="font-size: 15;float: right;margin-top: 5px;">
+                            <label id="smallLabel">
                                 v0.84.0 (Build 84)
                             </label>
                         </p>
@@ -124,17 +129,23 @@
                             Windows x64 v0.84.0 (Build 84)
                         </a>
                         <br />
-                        <p style="font-size: 22.5;margin-bottom: 3px;">
+                        <br />
+                        <p id="smallTitle">
                             Other Release
-                        </p>
-                        <p style="font-size: 15;float: right;margin-bottom: 8px;margin-top: -8px;">
-                            v0.83.0 (Build 83)
+                            <label id="smallLabel">
+                                v0.83.0 (Build 83)
+                            </label>
                         </p>
                         <a href="https://drive.google.com/file/d/1uas4WFRTgD1tRD6meH6wyvOMt4wD6brR/view?usp=sharing" style="font-size: 17.5;">
                             <img width="30" height="35" src="images/drive_google_icon.svg" style="margin-top: 8px;margin-left: -5px;"/>
                             Windows x64 v0.83.0 (Build 83)
                         </a>
                     </p>
+
+                    <hr color="#555555" size=2 style="border-radius: 1px; margin-top: 10px; margin-bottom: 10px;" />
+
+                    <a href="./group/" style="font-weight: bold;">QQ Group</a>
+                    <br />
                 </div>
             </div>
             <div class="box">

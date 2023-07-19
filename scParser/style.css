@@ -6,7 +6,7 @@ body {
     --animationEasing: cubic-bezier(0.215, 0.610, 0.355, 1);
     --globalTransition: 0.25s var(--animationEasing);
 
-    font-family: Comfortaa;
+    font-family: "Maple Mono SC NF";
 
     letter-spacing: 0.5px;
     -webkit-text-size-adjust: none;
@@ -68,7 +68,7 @@ body.night {
 
 label {
     font-size: 15px;
-    font-family: Comfortaa;
+    font-family: "Maple Mono SC NF";
     font-weight: bold;
 }
 
@@ -77,7 +77,7 @@ label {
 }
 
 textarea {
-    font-family: 'Fira Code';
+    font-family: "Maple Mono SC NF";
     font-variant-ligatures: none;
 
     font-size: 16;
@@ -106,6 +106,7 @@ textarea {
     -moz-box-shadow: 0 0 var(--textareaBlurPix) var(--textareaShadowColor);
     box-shadow: 0 0 var(--textareaBlurPix) var(--textareaShadowColor);
 
+    resize: none;
     /* transition: background-color var(--globalTransition), color var(--globalTransition); */
 }
 
@@ -118,7 +119,7 @@ textarea:focus {
 }
 
 button {
-    font-family: Comfortaa;
+    font-family: "Maple Mono SC NF";
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.5px;

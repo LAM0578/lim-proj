@@ -1,0 +1,286 @@
+
+body {
+    /* VARIABLE */
+
+    --placeholderColor: #555555;
+    --textColor: #333333;
+
+    --shadowColor: #00000033;
+    --backgroundColor: #fff;
+
+    --itemBackgroundColor: #ffffff55;
+    --itemFocusBackgroundColor: #fafafa45;
+
+    /* VARIABLE */
+
+    /* GLOBAL */
+
+    --animationEasing: cubic-bezier(0.215, 0.610, 0.355, 1);
+    --globalTransition: 0.15s var(--animationEasing);
+
+    /* GLOBAL */
+
+    /* PROPERTIES */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    
+    margin: 0;
+
+    background-color: var(--backgroundColor);
+    font-family: "Maple Mono SC NF";
+    -webkit-font-family: "Maple Mono SC NF";
+    
+    background-image: url("./images/hikari_day.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
+
+    /* PROPERTIES */
+
+}
+
+body.night {
+    /* VARIABLE */
+
+    --placeholderColor: #aaaaaa;
+    --textColor: #d0d0d0;
+
+    --shadowColor: #ffffff33;
+    --backgroundColor: #111;
+
+    --itemBackgroundColor: #22222255;
+    --itemFocusBackgroundColor: #55555545;
+
+    /* VARIABLE */
+
+    /* PROPERTIES */
+
+    background-color: var(--backgroundColor);
+    background-image: url("./images/hikari_night.png");
+
+    /* PROPERTIES */
+
+}
+
+.backgroundImage {
+    position: fixed;
+    background-color: var(--backgroundColor);
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.6;
+}
+
+.backgroundBlur {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.content {
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    -webkit-tap-highlight-color: transparent;
+
+    width: 100%;
+    height: 100%;
+
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
+}
+
+#title {
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 25px var(--shadowColor);
+
+    color: var(--textColor);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+input[type="text"], input[type="submit"], button, .questionResultDiv {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    font-size: 13.5px;
+
+    border: none;
+    outline: none;
+
+    box-shadow: 0 0 25px var(--shadowColor);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+
+    font-family: "Maple Mono SC NF";
+
+    transition: background-color var(--globalTransition), 
+                box-shadow var(--globalTransition);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+input[type="text"] {
+    background-color: var(--itemBackgroundColor);
+    color: var(--textColor);
+}
+
+input[type="text"]::placeholder {
+    user-select: none;
+    -webkit-user-select: none;
+    
+    color: var(--placeholderColor);
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 5px var(--shadowColor);
+    background-color: var(--itemFocusBackgroundColor);
+}
+
+input[type="submit"] {
+    background-color: var(--itemBackgroundColor);
+    color: var(--textColor);
+
+    cursor: pointer;
+}
+
+input[type="submit"]:active, button:active {
+    box-shadow: 0 0 5px var(--shadowColor);
+    background-color: var(--itemFocusBackgroundColor);
+}
+
+button {
+    background-color: var(--itemBackgroundColor);
+    color: var(--textColor);
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    padding: 12px;
+    margin: 10px;
+
+    cursor: pointer;
+}
+
+input[id="qqNumberInput"] {
+    width: 200px;
+}
+
+.qqInputGroup {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.questionResultDiv {
+
+    font-size: 13.5px;
+    
+    min-width: 275px;
+    max-width: 350px;
+    
+    margin: 20px;
+    /* padding: 10px; */
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: var(--textColor);
+    background-color: var(--itemBackgroundColor);
+}
+
+#questionResult {
+    padding: 0px;
+    opacity: 1;
+
+    min-width: 275px;
+    max-width: 350px;
+
+    min-height: 20px;
+
+    overflow: hidden;
+
+    width: 0;
+    height: 0;
+
+    transition: opacity var(--globalTransition),
+                width 0.35s var(--animationEasing),
+                height 0.35s var(--animationEasing);
+}
+
+#questionResult.onChange {
+    opacity: 0;
+}
+.toast {
+    position: fixed;
+    top: 10px;
+    transform: translateY(-50px);
+    
+    background-color: var(--itemBackgroundColor);
+    color: var(--textColor);
+
+    padding: 15px;
+    border-radius: 20px;
+
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+
+    box-shadow: 0 0 0px var(--shadowColor);
+    -webkit-box-shadow: 0 0 0px var(--shadowColor);
+    -moz-box-shadow: 0 0 0px var(--shadowColor);
+
+    opacity: 0;
+    font-size: 15px;
+    text-align: center;
+    transition: opacity var(--globalTransition),
+                transform 0.35s var(--animationEasing),
+                backdrop-filter 0.1s var(--animationEasing),
+                -webkit-backdrop-filter 0.1s var(--animationEasing),
+                box-shadow 0.35s var(--animationEasing),
+                -webkit-box-shadow 0.35s var(--animationEasing),
+                -moz-box-shadow 0.35s var(--animationEasing);
+        
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: 0 0 25px var(--shadowColor);
+    -webkit-box-shadow: 0 0 25px var(--shadowColor);
+    -moz-box-shadow: 0 0 25px var(--shadowColor);
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}

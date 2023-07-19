@@ -4,7 +4,7 @@ body {
 
     --marginValue: 5px;
 
-    font-family: Comfortaa;
+    font-family: "Maple Mono SC NF";
 
     background-color: #fff;
     margin: var(--marginValue);
@@ -87,7 +87,7 @@ a {
 }
 
 label[type="colorLabel"] {
-    width: 95px;
+    width: 150px;
     margin-left: 5px;
 }
 
@@ -131,7 +131,7 @@ input[type="color"] {
 }
 
 input[type="text"] {
-    font-family: 'Fira Code';
+    font-family: "Maple Mono SC NF";
     background-color: var(--itemBackgroundColor);
     color: var(--textColor);
     border-radius: 20px;
@@ -202,7 +202,7 @@ button {
 
     border-radius: 20px;
 
-    font-family: 'Fira Code';
+    font-family: "Maple Mono SC NF";
 
     background-color: var(--itemBackgroundColor);
     color: var(--textColor);
