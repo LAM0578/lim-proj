@@ -58,7 +58,7 @@ function getQuestion(qqNumber) {
     if (isNaN(qqNum) || !checkNumericInput(qqNumber)) {
         return "您输入的QQ号有误，请检查是否包含其他非数字字符。";
     }
-    else if (qqNum < 10000) {
+    else if (qqNum < 10000 || qqNum > 10000000000) {
         return "请输入正确的QQ号。";
     }
 
