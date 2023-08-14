@@ -13,15 +13,19 @@
             <div id="colorLeftDiv">
                 <label for="colorLeft" type="colorLabel">Color Left</label>
                 <input type="text" id="colorLeft" value="#ff0000" maxlength="7">
-                <div type="colorDisplay" id="colorDisplayLeft"style="background-color: #ff0000;">
-                    <input type="color" id="colorLeftPicker" value="#ff0000">
+                <div>
+                    <div type="colorDisplay" id="colorDisplayLeft"style="background-color: #ff0000;">
+                        <input type="color" id="colorLeftPicker" value="#ff0000">
+                    </div>
                 </div>
             </div>
             <div id="colorRightDiv">
                 <label for="colorRight" type="colorLabel">Color Right</label>
                 <input type="text" id="colorRight" value="#0000ff" maxlength="7">
-                <div type="colorDisplay" id="colorDisplayRight" style="background-color: #0000ff;">
-                    <input type="color" id="colorRightPicker" value="#0000ff">
+                <div>
+                    <div type="colorDisplay" id="colorDisplayRight" style="background-color: #0000ff;">
+                        <input type="color" id="colorRightPicker" value="#0000ff">
+                    </div>
                 </div>
             </div>
             <div id="colorLerpDiv">
@@ -30,9 +34,11 @@
                 <input type="text" id="progressInput" value="0%">
             </div>
             <div id="resultDiv">
-                <label for="resultDisplay" type="resultLabel">Result (Click button to Copy)</label>
-                <div id="resultDisplay" style="background-color:#ff0000;"></div>
-                <button id="resultValueButton" >#ff0000</button>
+                <label for="resultDisplay" type="resultLabel">Result</label>
+                <div style="display: flex;">
+                    <div id="resultDisplay" style="background-color:#ff0000;"></div>
+                    <button id="resultValueButton" >#ff0000</button>
+                </div>
             </div>
             <br>
             <a href="../" id="backText">&lt;&lt; Back</a>

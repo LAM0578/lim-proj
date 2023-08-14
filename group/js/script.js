@@ -54,16 +54,18 @@ function getQuestion(qqNumber) {
         return "请在上方的输入框中输入您的QQ号。"
     }
     
-    let qqNum = parseInt(qqNumber);
-    if (isNaN(qqNum) || !checkNumericInput(qqNumber)) {
+    if (!checkNumericInput(qqNumber)) {
         return "您输入的QQ号有误，请检查是否包含其他非数字字符。";
     }
-    else if (qqNum < 10000 || qqNum > 10000000000) {
+
+    let qqNum = BigInt(parseInt(qqNumber));
+    if (qqNum < 10000) {
         return "请输入正确的QQ号。";
     }
 
-    let n = questions.length - 1;
-    let index = (((((((n % qqNum) ^ qqNum) % n) % n) * 3) << 3) % n);
+    let n = BigInt(questions.length);
+    let v0 = qqNum / n;
+    let index = ((((n ^ qqNum) + v0) << 3n) * v0) % n;
     
     return questions[index];
 }

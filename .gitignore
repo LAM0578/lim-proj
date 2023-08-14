@@ -4,3 +4,4 @@ pyscript/
 temp/
 _backup/
 *.htaccess
+songlistEditor/*
