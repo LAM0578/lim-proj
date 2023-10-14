@@ -71,8 +71,10 @@ body.night {
     
 }
 
-h1[id="title"] {
+label[id="title"] {
     margin-top: 0px;
+    font-weight: bold;
+    font-size: 25px;
     transform: translateX(var(--translateX));
 }
 

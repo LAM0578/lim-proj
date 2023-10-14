@@ -34,7 +34,7 @@ body {
     font-family: "Fira Code", sans-serif;
     -webkit-font-family: "Fira Code", sans-serif;
     
-    background-image: url("./images/hikari_day.png");
+    background-image: url("./images/JPEG/hikari_day.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,7 +63,7 @@ body.night {
     /* PROPERTIES */
 
     background-color: var(--backgroundColor);
-    background-image: url("./images/hikari_night.png");
+    background-image: url("./images/JPEG/hikari_night.jpg");
 
     /* PROPERTIES */
 
