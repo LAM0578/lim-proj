@@ -4,7 +4,7 @@ body {
 
     --marginValue: 5px;
 
-    font-family: "Maple Mono SC NF";
+    font-family: "Fira Code";
 
     background-color: #fff;
     margin: var(--marginValue);
@@ -25,6 +25,20 @@ body {
     --sliderThumbColor: #808080;
 
     /* VARIABLE */
+
+    /* PROPERTIES */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -ms-flex-direction: column;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
+
+    /* PROPERTIES */
 }
 
 body.night {
@@ -54,6 +68,7 @@ body.night {
     transform: translateX(var(--translateX));
 
     border-radius: 10px;
+    
 }
 
 h1[id="title"] {
@@ -128,13 +143,21 @@ input[type="color"] {
     width: 20px;
     height: 20px;
     opacity: 0;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 input[type="text"] {
-    font-family: "Maple Mono SC NF";
+    font-family: "Fira Code";
     background-color: var(--itemBackgroundColor);
     color: var(--textColor);
     border-radius: 20px;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 input[id="colorLeft"], [id="colorRight"] {
@@ -145,6 +168,10 @@ input[id="colorLeft"], [id="colorRight"] {
 
 input[type="text"]:focus {
     outline: none;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 input[id="lerpSlider"] {
@@ -156,6 +183,10 @@ input[id="lerpSlider"] {
 
     /* clip-path: view-box; */
     border: none;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 [type="range"]::-webkit-slider-thumb {
@@ -167,7 +198,6 @@ input[id="lerpSlider"] {
 
     border-radius: 50%;
     background-color: var(--sliderThumbColor);
-
 }
 
 input[id="progressInput"] {
@@ -175,6 +205,10 @@ input[id="progressInput"] {
     padding: 5px;
     width: calc(100% - 250px);
     /* transform: translateY(-3px); */
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 div[id="resultDiv"] {
@@ -184,6 +218,10 @@ div[id="resultDiv"] {
     color: var(--textColor);
     padding: 5px;
     padding-bottom: 0px;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 div[id="resultDisplay"] {
@@ -191,6 +229,10 @@ div[id="resultDisplay"] {
     width: 20px;
     height: 20px;
     border-radius: 100%;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 button {
@@ -203,7 +245,7 @@ button {
 
     border-radius: 20px;
 
-    font-family: "Maple Mono SC NF";
+    font-family: "Fira Code";
 
     background-color: var(--itemBackgroundColor);
     color: var(--textColor);
@@ -214,8 +256,16 @@ button {
 
     border: none;
     border-style: none;
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
 
 button:hover {
     background-color: var(--buttonHoverBackgroundColor);
+
+    scrollbar-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-scrollbar-highlight-color: transparent;
 }
