@@ -9,7 +9,8 @@ const names = [
     'bodystyle',
     'scrollbar-container',
     'dayicon',
-    'nighticon'
+    'nighticon',
+    'x-icon'
 ]
 
 const elementItems = []

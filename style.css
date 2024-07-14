@@ -185,3 +185,14 @@ a {
     margin-top: 5px;
     font-weight: bold;
 }
+
+.x-icon {
+    width: 16;
+    height: 16;
+    fill: #fff;
+}
+
+
+.x-icon.day-mode {
+    fill: #000;
+}
