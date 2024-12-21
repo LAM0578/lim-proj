@@ -36,8 +36,8 @@
     position: relative;
     color: #dfdfdf;
     background-color: #333333;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 99999px;
+    padding: 5px 8px;
     font-weight: bold;
 }
 
@@ -192,7 +192,20 @@ a {
     fill: #fff;
 }
 
-
 .x-icon.day-mode {
     fill: #000;
+}
+
+.download-group {
+    background-color: #333333ff;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 99999px;
+}
+
+.download-group.day-mode {
+    background-color: #dfdfdfff;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 99999px;
 }

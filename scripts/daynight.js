@@ -10,7 +10,8 @@ const names = [
     'scrollbar-container',
     'dayicon',
     'nighticon',
-    'x-icon'
+    'x-icon',
+    'download-group'
 ]
 
 const elementItems = []
