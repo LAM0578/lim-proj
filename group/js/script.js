@@ -1,8 +1,22 @@
 const space = "\u200B ";
 const questions = [
-    `Arcade是什么，以及您当前的潜力值。`,  `愚人节曲目《HIVEMIND INTERLINKED》中的大小键实际为什么note？`,  `请给出Arc的y坐标换算为世界坐标的公式。`,  `当某首曲子分数为9900000时，最终的单曲潜力值与该谱面的定数的差为？`,  `Camera语句首次出现的谱面是？`,  `截止至当前最新版本，OVER和STEP最高的（在全部属性拉满的情况下）搭档是？`,  `请问TimingPointDensityFactor是做什么的？（它在"-"前出现，非事件语句）`,  `请给出Arc的x坐标换算为世界坐标的公式。`,  `在没有启用enwidenlanes类型的scenecontrol事件并且某个地面轨道note位于0/5轨，请问该note是否能被判定？`,  `请问曲目《Last | Moment》和《Last | Eternity》本质上是同一首曲目id的曲目吗？`,  `请描述Beyond谱面的y=1时的范围。`,  `请简要描述Arc高度指示器的触发条件。`,  `请列出4.0.0新加入的scenecontrol事件的类型。`,  `请描述目前已有的 Arc 类型。`,  `请问以下谱面片段是否为合法aff（以本体是否能正常读取为准）？
+    `Arcade是什么，以及您当前的潜力值。`,
+    `愚人节曲目《HIVEMIND INTERLINKED》中的大小键实际为什么note？`,
+    `请给出Arc的y坐标换算为世界坐标的公式。`,
+    `当某首曲子分数为9900000时，最终的单曲潜力值与该谱面的定数的差为？`,
+    `Camera语句首次出现的谱面是？`,
+    `截止至当前最新版本，OVER和STEP最高的（在全部属性拉满的情况下）搭档是？`,
+    `请问TimingPointDensityFactor是做什么的？（它在"-"前出现，非事件语句）`,
+    `请给出Arc的x坐标换算为世界坐标的公式。`
+     `在没有启用enwidenlanes类型的scenecontrol事件并且某个地面轨道note位于0/5轨，请问该note是否能被判定？`,
+     `请问曲目《Last | Moment》和《Last | Eternity》本质上是同一首曲目id的曲目吗？`,
+     `请描述Beyond谱面的y=1时的范围。`,
+     `请简要描述Arc高度指示器的触发条件。`,
+     `请列出4.0.0新加入的scenecontrol事件的类型。`,
+     `请描述目前已有的 Arc 类型。`,
+     `请问以下谱面片段是否为合法aff（以本体是否能正常读取为准）？
     如果为非法aff，请直接回答理由及现象。
-    
+
     AudioOffset:0
     -
     timing(0,100.,4.);
@@ -10,8 +24,8 @@ const questions = [
     timinggroup(){
     ​ ​ timing(0,100.,4.);
     ​ ​ (0,.5);
-    };
-    `,  `请问以下语句是否有误（以本体是否能正常读取为准）？
+    };`,
+    `请问以下语句是否有误（以本体是否能正常读取为准）？
     如有误，请直接回答理由及现象。
 
     timing(0,100.00,0.00);
@@ -22,8 +36,7 @@ const questions = [
     timing(0,100.00,4.00);
     timing(250,50.00,4.00);
     arc(0,500,0.0,0.0,s,1.0,1.0,0,none,false);
-    arc(0,500,1.0,1.0,s,1.0,1.0,1,none,false);
-    `
+    arc(0,500,1.0,1.0,s,1.0,1.0,1,none,false);`
 ]
 
 function checkNumericInput(input) {
@@ -36,11 +49,11 @@ function pseudoRandomRange(seed, min, max) {
     max = BigInt(max);
 
     seed = BigInt(seed);
-    
+
     const a = BigInt(1664525);
     const c = BigInt(1013904223);
     const m = BigInt(2) ** BigInt(32);
-    
+
     seed = (a * seed + c) % m;
 
 
@@ -55,7 +68,7 @@ function getQuestion(qqNumber) {
     if (qqNumber === '') {
         return "请在上方的输入框中输入您的QQ号。"
     }
-    
+
     if (!checkNumericInput(qqNumber)) {
         return "您输入的QQ号有误，请检查是否包含其他非数字字符。";
     }
@@ -66,7 +79,7 @@ function getQuestion(qqNumber) {
     }
 
     let index = pseudoRandomRange(qqNum, 0, questions.length - 1);
-    
+
     return questions[index];
 }
 
@@ -109,7 +122,7 @@ function copyText(text, toastMessage) {
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
-    
+
     showToast(toastMessage);
 }
 
@@ -121,7 +134,7 @@ function setResultText(text) {
     clearTimeout(questionResultTimeout);
     questionResultTimeout = setTimeout(() => {
         questionResult.innerText = text;
-        
+
         let size = measureSize();
 
         questionResult.style.width = size.width + "px";
