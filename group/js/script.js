@@ -1,6 +1,6 @@
 const space = "\u200B ";
 const questions = [
-    `Arcade是什么，以及您当前的潜力值。`,  `愚人节曲目《HIVEMIND INTERLINKED》中的大小键实际为什么note？`,  `请给出Arc的y坐标换算为世界坐标的公式。`,  `当某首曲子分数为9900000时，最终的单曲潜力值与该谱面的定数的差为？`,  `Camera语句首次出现的谱面是？`,  `截止至当前最新版本，OVER和STEP最高的（在全部属性拉满的情况下）搭档是？`,  `请问TimingPointDensityFactor是做什么的？（它在"-"前出现，非事件语句）`,  `请给出Arc的x坐标换算为世界坐标的公式。`,  `在没有启用enwidenlanes类型的scenecontrol事件并且某个地面轨道note位于0/5轨，请问该note是否能被判定？`,  `请问曲目《Last | Moment》和《Last | Eternity》本质上是同一首曲目id的曲目吗？`,  `请描述Beyond谱面的y=1时的范围。`,  `请简要描述Arc高度指示器的触发条件。`,  `请列出4.0.0新加入的scenecontrol事件的类型。`,  `请描述目前已有的 Arc 类型。`,  `请问以下谱面片段是否为合法aff（以本体是否能正常读取为准）？
+    `Arcade是什么，以及您当前的潜力值。`,  `愚人节曲目《HIVEMIND INTERLINKED》中的大小键实际为什么note？`,  `请给出Arc的y坐标换算为世界坐标的公式。`,  `当某首曲子分数为9900000时，最终的单曲潜力值与该谱面的定数的差为？`,  `Camera语句首次出现的谱面是？`,  `截止至当前最新版本，OVER和STEP最高的（在全部属性拉满的情况下）搭档是？`,  `请问TimingPointDensityFactor是做什么的？（它在"-"前出现，非事件语句）`,  `请给出Arc的x坐标换算为世界坐标的公式。`,  `在没有启用enwidenlanes类型的scenecontrol事件并且某个地面轨道note位于0/5轨，请问该note是否能被判定？`,  `请问曲目《Last | Moment》和《Last | Eternity》本质上是同一首曲目id的曲目吗？`,  `请描述Beyond谱面的y=1时的范围。`,  `请简要描述Arc高度指示器的触发条件。（高度指示器并非手指按下时的白线）`,  `请列出4.0.0新加入的scenecontrol事件的类型。`,  `请描述目前已有的 Arc 类型。`,  `请问以下谱面片段是否为合法aff（以本体是否能正常读取为准）？
     如果为非法aff，请直接回答理由及现象。
     
     AudioOffset:0
@@ -23,7 +23,7 @@ const questions = [
     timing(250,50.00,4.00);
     arc(0,500,0.0,0.0,s,1.0,1.0,0,none,false);
     arc(0,500,1.0,1.0,s,1.0,1.0,1,none,false);
-    `
+    `,  `当一条Arc的持续时间为1并且该Arc上只有一个ArcTap时该Arc是否会被隐藏？`
 ]
 
 function checkNumericInput(input) {
@@ -67,7 +67,7 @@ function getQuestion(qqNumber) {
 
     let index = pseudoRandomRange(qqNum, 0, questions.length - 1);
     
-    return questions[index];
+    return "请在入群答案中回答以下问题:\n\n" + questions[index];
 }
 
 const qqNumberInput = document.getElementById("qqNumberInput");
