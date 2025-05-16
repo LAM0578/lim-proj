@@ -1,0 +1,1 @@
+const url = "http://aa.huoyan1231.org/files/version";
