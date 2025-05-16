@@ -5,9 +5,9 @@ function parseBool(bol) {
     return idx > 0;
 }
 
-function setCookie(name, val, exd) {
+function setCookie(name, val, expDays) {
     var d = new Date();
-    d.setTime(d.getTime() + exd * 24 * 60 * 60 * 1000);
+    d.setTime(d.getTime() + expDays * 24 * 60 * 60 * 1000);
 
     var ex = `expires=${d.toUTCString()}`;
     document.cookie = `${name}=${val}; ${ex}`;

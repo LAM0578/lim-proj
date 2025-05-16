@@ -1,7 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade-Alpha</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap"> -->
+    <link rel="stylesheet" href="../fonts/fira_code/fira_code.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
 <body>
+    <div class="MainContainer">
+        <div class="TitleContainer">
+            <img src="./res/icon.webp" alt="Arcade-Alpha" class="TitleIcon">
+            <div class="TitleText">Arcade-Alpha</div>
+            <div class="Blocker"></div>
+        </div>
+        <div class="Container">
+            <img src="../images/drive_google_icon.svg" class="GoogleDriveIcon"></img>
+            <div class="DiscordIcon"></div>
+            <div class="ContainerButton" id="DownloadContainer">
+            </div>
+            <div class="RefreshButton" id="RefreshButton">
+                <img src="./res/refresh.svg" class="RefreshIcon"></img>
+                <div class="Blocker"></div>
+            </div>
+        </div>
+        <div class="Container">
+            <img src="./res/QQLogo.svg" class="QQLogo"></img>
+            <div class="Blocker"></div>
+            <div class="ContainerButton" id="GroupContainer">
+                <a href="../group/" class="ContainerButtonText">
+                    QQ Group
+                </a>
+            </div>
+        </div>
+        <div class="Container">
+            <img src="./res/discord.svg" class="DiscordIcon"></img>
+            <div class="Blocker"></div>
+            <div class="ContainerButton" id="GroupContainer">
+                <a href="https://discord.gg/C4jtpBcNrg" class="ContainerButtonText">
+                    Discord
+                </a>
+            </div>
+        </div>
+        <div class="Container">
+            <img src="./res/NCat.svg" class="Icon"></img>
+            <div class="Blocker"></div>
+            <div class="ContainerButton" id="GroupContainer">
+                <a href="../" class="ContainerButtonText">
+                    Back to Main Page
+                </a>
+            </div>
+        </div>
+    </div>
     <script src="./scripts/helper.js"></script>
+    <script src="../scripts/helper.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
 </html>
