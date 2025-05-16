@@ -1,4 +1,4 @@
-const url = "http://aa.huoyan1231.org/files/version";
+const url = "https://aa.huoyan1231.org:445/files/version";
 
 var container = document.getElementById("DownloadContainer");
 var refreshButton = document.getElementById("RefreshButton");
