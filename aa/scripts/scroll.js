@@ -1,9 +1,9 @@
 let currentIndex = 0;
 const images = document.querySelectorAll('.image-container img');
+const imageContainer = document.querySelector('.image-container');
 
 function showImage(index) {
-    const imageContainer = document.querySelector('.image-container');
-    imageContainer.style.transform = `translateX(${-index * 532}px)`;
+    imageContainer.style.transform = `translateX(${-index * 100}%)`;
     images.forEach((img, i) => {
         img.classList.toggle('active', i === index);
     });
