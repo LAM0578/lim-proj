@@ -3,7 +3,7 @@ const images = document.querySelectorAll('.image-container img');
 
 function showImage(index) {
     const imageContainer = document.querySelector('.image-container');
-    imageContainer.style.transform = `translateX(${-index * 100}%)`;
+    imageContainer.style.transform = `translateX(${-index * 532}px)`;
     images.forEach((img, i) => {
         img.classList.toggle('active', i === index);
     });

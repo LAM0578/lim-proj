@@ -5,15 +5,16 @@
     width: 532px;
     height: auto;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 @media (min-width: 550px) {
     .image-slider {
-        /* width: 533px; */
         height: 300px;
-        /* border-radius: 34.5px; */
     }
 }
-
 
 .image-container {
     display: flex;
@@ -32,7 +33,6 @@
     }
 }
 
-
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
@@ -47,6 +47,7 @@
     z-index: 10;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    overflow: hidden;
 }
 
 .prev-btn {

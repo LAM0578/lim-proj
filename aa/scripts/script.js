@@ -5,6 +5,10 @@ const refreshButton = document.getElementById("RefreshButton");
 const body = document.body;
 const mainContainer = document.querySelector(".MainContainer")
 const buttonContainer = document.getElementById("ButtonContainer");
+const refreshIcon = document.getElementById("RefreshIcon");
+
+var refreshRotate = 0;
+var roteteTimeout = null;
 
 function setInfo(data) {
     
@@ -12,7 +16,6 @@ function setInfo(data) {
     var buildDate = data.buildDate;
     var dayVersion = data.dayVersion;
     var url = atob(data.downloadUrl);
-
     
     var displayVersion = `v${floor(version/1000)}.${fformat(version/10,1)}`
     var splits = buildDate.split("/");
@@ -75,6 +78,17 @@ else {
 }
 
 refreshButton.addEventListener("click", function() {
+    if (roteteTimeout !== null) {
+        clearTimeout(roteteTimeout);
+        roteteTimeout = null;
+    }
+    refreshRotate += 360;
+    refreshIcon.style = `transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1); rotate: ${refreshRotate}deg`;
+    roteteTimeout = setTimeout(() => {
+        refreshRotate = 0;
+        refreshIcon.style = `rotate: ${refreshRotate}deg`;
+        roteteTimeout = null;
+    }, 300);
     getVersionAndSetCoockie();
 }, false);
 buttonContainer.addEventListener("click", function(){

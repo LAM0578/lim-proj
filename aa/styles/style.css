@@ -146,11 +146,11 @@ body {
     transition:
         background-color 0.1s ease-in-out,
         rotate 0.5s ease-in-out;
+    overflow: hidden;
 }
 @media (hover: hover) {
 .RefreshButton:hover {
     background-color: #fff5;
-    rotate: 180deg;
 }
 }
 .RefreshButton:active {
@@ -209,16 +209,6 @@ body {
         transform: translateX(-50%);
     }
 }
-/* @media (min-width: 700px) {
-    .MainContainer {
-        top: calc(100vh * 0.1);
-    }
-} */
-/* @media (max-width: 350px) {
-    .MainContainer {
-        transform: scale(calc(100vw / 350px));
-    }
-} */
 
 .PrevIcon {
     position: absolute;
@@ -241,4 +231,11 @@ body {
     width: 100%;
     height: 100%;
     transition: opacity 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ButtonContainer:hover {
+    opacity: 1;
 }
