@@ -1,11 +1,13 @@
 body {
-    background-color: #00000a;
-        scale: 0.95;
+    background-color: #0a0000;
+    scale: 0.95;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
 }
-
-/* .MainContainer {
-    margin-top: calc(80px*4*.5);
-} */
 
 .TitleContainer {
     position: relative;
@@ -182,4 +184,61 @@ body {
     height: 100%;
     position: absolute;
     left: 17px;
+}
+
+.FeatureContainer {
+    height: auto;
+    border-radius: 34.5px;
+}
+@media (min-width: 550px) {
+    .FeatureContainer {
+        height: 300px;
+    }
+}
+
+.MainContainer {
+    position: relative;
+    max-width: 532px;
+    min-width: 350px;
+    margin: 0;
+}
+@media (min-width: 532px) {
+    .MainContainer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+/* @media (min-width: 700px) {
+    .MainContainer {
+        top: calc(100vh * 0.1);
+    }
+} */
+/* @media (max-width: 350px) {
+    .MainContainer {
+        transform: scale(calc(100vw / 350px));
+    }
+} */
+
+.PrevIcon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.NextIcon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    rotate: 180deg;
+}
+
+.ButtonContainer {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease-in-out;
 }

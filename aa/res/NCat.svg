@@ -1,3 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1500 -2750 3051 3003">
-	<path d="M 0 0 A 100 100 90 0 1 0 -2500 L 0 -2000 L 700 -2500 A 100 100 90 0 1 -700 -600 A 100 100 90 0 1 1300 -500 A 540 540 90 0 1 700 0 A 252 252 90 0 1 700 -500" stroke="#fff" stroke-width="250" fill="none"/>
+	<path d="M 0 0 A 100 100 90 0 1 0 -2500 L 0 -2000 L 700 -2500 A 100 100 90 0 1 -700 -600 A 100 100 90 0 1 1300 -500 A 540 540 90 0 1 700 0 A 252 252 90 0 1 700 -500" stroke="#fff" stroke-width="250" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

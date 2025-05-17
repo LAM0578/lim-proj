@@ -8,6 +8,7 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap"> -->
     <link rel="stylesheet" href="../fonts/fira_code/fira_code.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/scroll.css">
     <link rel="icon" href="./favicon.ico">
 </head>
 <body>
@@ -54,9 +55,36 @@
                 </a>
             </div>
         </div>
+        <div class="Container FeatureContainer">
+            <div class="image-slider">
+                <div class="image-container">
+                    <img src="./res/img/jacket.webp">
+                    <img src="./res/img/aa_0.webp">
+                    <img src="./res/img/aa_1.webp">
+                    <img src="./res/img/aa_2.webp">
+                    <img src="./res/img/aa_3.webp">
+                    <img src="./res/img/aa_4.webp">
+                </div>
+                <div class="Blocker"></div>
+                <div class="ButtonContainer" id="ButtonContainer">
+                    <button class="prev-btn" onclick="prevImage()">
+                        <img src="./res/prev.svg" class="PrevIcon"></img>
+                        <div class="Blocker"></div>
+                    </button>
+                    <button class="next-btn" onclick="nextImage()">
+                        <img src="./res/prev.svg" class="NextIcon"></img>
+                        <div class="Blocker"></div>
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="ImageBlocker">
+                <div class="Bloacker"></div>
+            </div> -->
+        </div>
     </div>
     <script src="./scripts/helper.js"></script>
     <script src="../scripts/helper.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/scroll.js"></script>
 </body>
 </html>
