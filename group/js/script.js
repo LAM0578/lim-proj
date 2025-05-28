@@ -33,7 +33,7 @@ const questions = [
     timinggroup(){
     ​ ​ timing(0,100.00,0.00);
     ​ ​ hold(0,1000,4);
-    }
+    };
     `,  `描述缓动类型为b的Arc的缓动名称`,  `描述缓动类型为si的Arc的缓动名称`,  `描述缓动类型为so的Arc的缓动名称`,  `SkyInput常规状态下的世界y坐标`
 ]
 
