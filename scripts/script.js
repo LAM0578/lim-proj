@@ -1,3 +1,5 @@
+const isFireFox = navigator.userAgent.toLowerCase().includes('firefox');
+const isAppleWebKit = navigator.userAgent.toLowerCase().includes('applewebkit');
 
 function version2text(version) {
     return `${Math.floor(version / 100)}.${(version % 100) / 10}.${version % 10}`
@@ -83,4 +85,13 @@ appendItem(lastest, lastedRelease, true);
 for (let i = otherReleases.length - 1; i >= 0; i--) {
     const e = otherReleases[i];
     appendItem(other, e, i == 0);
+}
+
+
+if (true || isFireFox && !isAppleWebKit) {
+    const body = document.body;
+    const container = document.getElementById("scrollbar-container");
+    const height = window.innerHeight;
+    body.style = `height: ${height - 20}px`
+    container.style = `height: ${height - 80}px`
 }
