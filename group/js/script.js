@@ -55,6 +55,8 @@ const questions = [
     `Arc 无视染色的条件是什么？`
 ]
 
+const isFireFox = navigator.userAgent.toLowerCase().includes('firefox');
+
 function checkNumericInput(input) {
     var regex = /^[0-9]+$/;
     return regex.test(input);
@@ -213,15 +215,12 @@ copyQQGroupNumber.addEventListener("click", () => {
 });
 
 backToMainPageButton.addEventListener("click", () => {
-    window.open("../aa");
+    window.open("../aa", "_self");
 })
 
 window.onload = () => {
+    if (isFireFox) {
+        body.style = "height: 100vh"
+    }
     setResultText("请在上方的输入框中输入您的QQ号，您的问题将会在这里出现。");
 }
-
-// console.log(questions.length)
-// console.log()
-// for (let i = 0; i < 20; i++) {
-//     console.log(pseudoRandomRange(i, 0, questions.length - 1))
-// }
