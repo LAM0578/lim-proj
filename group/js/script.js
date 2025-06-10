@@ -225,5 +225,3 @@ window.onload = () => {
     }
     setResultText("请在上方的输入框中输入您的QQ号，您的问题将会在这里出现。");
 }
-
-console.log(navigator.userAgent);
