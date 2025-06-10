@@ -6,6 +6,7 @@ const body = document.body;
 const mainContainer = document.querySelector(".MainContainer")
 const buttonContainer = document.getElementById("ButtonContainer");
 const refreshIcon = document.getElementById("RefreshIcon");
+const backgroundImage = document.getElementById("backgroundImage");
 
 var refreshRotate = 0;
 var roteteTimeout = null;
@@ -26,6 +27,7 @@ function setInfo(data) {
 
     downloadContainer.innerHTML = `
     <a href="${url}" class="ContainerButtonText" id="URLContainer">
+        <br/>
         ${displayVersion}
     </a>`;
 }
@@ -53,6 +55,8 @@ function updateScale() {
         scale = Math.max(scale, 0.5) * 0.95;
         body.style.left = `${(0.95 - scale) * -50}%`;
         body.style.scale = scale;
+        backgroundImage.style.left = `${(0.95 - scale) * 80}%`;
+        backgroundImage.style.scale = 1 / scale;
     }
     else {
         body.style = "";

@@ -1,5 +1,7 @@
 body {
-    background-color: #0a0000;
+    --glassInnerOuter: #ffffff30;
+    --glassInnerInner: #00000003;
+    background-color: #000000;
     scale: 0.95;
     position: absolute;
     width: 100%;
@@ -11,16 +13,46 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    --glass:
+            inset -1px -12px 15px var(--glassInnerInner),
+            inset 1px 12px 15px var(--glassInnerInner),
+            inset -1px -1px 1px var(--glassInnerOuter),
+            inset 1px 1px 1px var(--glassInnerOuter);
+}
+
+.backgroundImage {
+    position: fixed;
+    /* background-color: #000; */
+
+    scale: 1.1;
+
+    background-image: url("../res/bg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.2;
 }
 
 .TitleContainer {
     position: relative;
     display: flex;
     height: 75px;
-    background-color: #cc446080;
+    background-color: #cc446040;
     border-radius: 50px;
     overflow: hidden;
     margin-bottom: 10px;
+    box-shadow:
+            0 0 15px #0007,
+            var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .TitleText {
@@ -72,10 +104,15 @@ body {
     position: relative;
     display: flex;
     height: 75px;
-    background-color: #cc446020;
+    background-color: #cc446008;
     border-radius: 50px;
     overflow: hidden;
     margin-bottom: 10px;
+    box-shadow:
+            0 0 15px #0007,
+            var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .ContainerButton {
@@ -89,15 +126,27 @@ body {
     border-radius: 50px;
     text-align: left;
     -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    box-shadow:
+            0 0 15px #0007,
+            var(--glass);
 }
 @media (hover: hover) {
     .ContainerButton:hover {
         background-color: #fff4;
+    }
+    .ContainerButton:active {
+        background-color: #fff6;
+    box-shadow:
+            0 0 5px #000a,
+            inset -1px -12px 15px var(--glassInnerInner),
+            inset 1px 12px 15px var(--glassInnerInner),
+            inset -1px -1px 0.2px var(--glassInnerOuter),
+            inset 1px 1px 0.2px var(--glassInnerOuter);
     }
 }
 
@@ -106,7 +155,9 @@ body {
     font-family: "Noto Sans", sans-serif;
     color: #fff;
     font-size: 1.5em;
-    top: 20px;
+    top: -12px;
+    width: 10000px;
+    height: 100px;
     padding-left: 25px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -116,14 +167,14 @@ body {
 }
 @media (max-width: 450px) {
     .ContainerButtonText {
-        top: 22px;
+        top: -5px;
         font-size: 1.3em;
         padding-left: 20px;
     }
 }
 @media (max-width: 375px) {
     .ContainerButtonText {
-        top: 25px;
+        top: 2px;
         font-size: 1.1em;
         padding-left: 20px;
     }
@@ -151,6 +202,10 @@ body {
         background-color 0.1s ease-in-out,
         rotate 0.5s ease-in-out;
     overflow: hidden;
+    box-shadow:
+            0 0 15px #0005,
+            inset -1px -1px 0.5px var(--glassInnerOuter),
+            inset 1px 1px 0.5px var(--glassInnerOuter);
 }
 @media (hover: hover) {
 .RefreshButton:hover {
