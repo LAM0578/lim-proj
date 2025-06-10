@@ -155,7 +155,7 @@ body {
     font-family: "Noto Sans", sans-serif;
     color: #fff;
     font-size: 1.5em;
-    top: -12px;
+    top: 20px;
     width: 10000px;
     height: 100px;
     padding-left: 25px;
@@ -167,14 +167,14 @@ body {
 }
 @media (max-width: 450px) {
     .ContainerButtonText {
-        top: -5px;
+        top: 22px;
         font-size: 1.3em;
         padding-left: 20px;
     }
 }
 @media (max-width: 375px) {
     .ContainerButtonText {
-        top: 2px;
+        top: 25px;
         font-size: 1.1em;
         padding-left: 20px;
     }

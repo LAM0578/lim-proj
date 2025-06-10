@@ -8,6 +8,10 @@ const buttonContainer = document.getElementById("ButtonContainer");
 const refreshIcon = document.getElementById("RefreshIcon");
 const backgroundImage = document.getElementById("backgroundImage");
 
+const qqGroupButton = document.getElementById("QQGroupButton");
+const discordButton = document.getElementById("DiscordButton");
+const backToMainPageButton = document.getElementById("BackToMainPageButton");
+
 var refreshRotate = 0;
 var roteteTimeout = null;
 
@@ -26,8 +30,7 @@ function setInfo(data) {
     displayVersion += ` b${year}${month}${day}${dformat(dayVersion, 2)}`;
 
     downloadContainer.innerHTML = `
-    <a href="${url}" class="ContainerButtonText" id="URLContainer">
-        <br/>
+    <a class="ContainerButtonText" id="URLContainer">
         ${displayVersion}
     </a>`;
 }
@@ -99,6 +102,18 @@ buttonContainer.addEventListener("click", function(){
     buttonContainer.style.opacity = 1;
 });
 
+
+qqGroupButton.addEventListener("click", function(){
+    window.open("../group", "_self");
+});
+
+discordButton.addEventListener("click", function(){
+    window.open("https://discord.gg/C4jtpBcNrg", "_self");
+});
+
+backToMainPageButton.addEventListener("click", function(){
+    window.open("../", "_self");
+});
 
 window.addEventListener('resize', updateScale);
 updateScale();
