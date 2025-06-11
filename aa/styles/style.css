@@ -1,6 +1,4 @@
 body {
-    --glassInnerOuter: #ffffff30;
-    --glassInnerInner: #00000003;
     background-color: #000000;
     scale: 0.95;
     position: absolute;
@@ -13,6 +11,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    --glassInnerOuter: #ffffff30;
+    --glassInnerInner: #00000003;
     --glass:
             inset -1px -12px 15px var(--glassInnerInner),
             inset 1px 12px 15px var(--glassInnerInner),

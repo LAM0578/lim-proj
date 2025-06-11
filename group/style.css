@@ -45,6 +45,7 @@ body {
     -ms-flex-direction: column;
     
     margin: 0;
+    overflow: hidden;
 
     background-color: var(--backgroundColor);
     font-family: "Fira Code", sans-serif;

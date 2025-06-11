@@ -1,4 +1,13 @@
 
+* {
+    --glassInnerOuter: #ffffff30;
+    --glassInnerInner: #00000003;
+    --glass:
+            inset -1px -12px 15px var(--glassInnerInner),
+            inset 1px 12px 15px var(--glassInnerInner),
+            inset -1px -1px 1px var(--glassInnerOuter),
+            inset 1px 1px 1px var(--glassInnerOuter);
+}
 
 .image-slider {
     position: relative;
@@ -53,6 +62,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     overflow: hidden;
+    box-shadow: 0 0 15px #0008, var(--glass);
 }
 
 .prev-btn {

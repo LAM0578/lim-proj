@@ -29,6 +29,10 @@ function setInfo(data) {
     var day = dformat(splits[2], 2);
     displayVersion += ` b${year}${month}${day}${dformat(dayVersion, 2)}`;
 
+    downloadContainer.onclick = function() {
+        window.open(url, "_self");
+    }
+
     downloadContainer.innerHTML = `
     <a class="ContainerButtonText" id="URLContainer">
         ${displayVersion}
