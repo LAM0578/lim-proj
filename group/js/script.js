@@ -24,7 +24,7 @@ const questions = [
     timing(0,100.00,0.00);
     `,
     `当一条Arc的持续时间为1并且该Arc上只有一个ArcTap时，该Arc是否会被隐藏？`,
-    `Arc的长度根据什么计算的？`,
+    `Arc的长度根据什么计算的？（此长度为渲染长度）`,
     `
     请问以下谱面片段是否为合法aff（以本体是否能正常读取为准）？
     
@@ -52,7 +52,8 @@ const questions = [
     flick(0,-0.25,0.00,0.00,1.00);
     flick(0,1.25,0.00,0.00,1.00);
     `,
-    `Arc 无视染色的条件是什么？`
+    `Arc无视染色的条件是什么？（请详细描述）`,
+    `邻轨判定的范围和什么有关？`
 ]
 
 const isFireFox = navigator.userAgent.toLowerCase().includes('firefox');
