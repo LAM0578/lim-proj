@@ -23,7 +23,7 @@ function setInfo(data) {
     var dayVersion = data.dayVersion;
     var url = atob(data.downloadUrl);
     
-    var displayVersion = `$v${floor(version/1000)}.${floor(version%1000/10)}.${floor(version%10)}`
+    var displayVersion = `v${floor(version/1000)}.${floor(version%1000/10)}.${floor(version%10)}`
     var splits = buildDate.split("/");
     var year = splits[0];
     var month = dformat(splits[1], 2);
