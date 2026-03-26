@@ -15,6 +15,13 @@ const backToMainPageButton = document.getElementById("BackToMainPageButton");
 var refreshRotate = 0;
 var roteteTimeout = null;
 
+function getDisplayVersion(verison) {
+    if (verison >= 0x010000) {
+        return `${verison >> 16 & 0xff}.${verison >> 8 & 0xff}.${verison & 0xff}`
+    }
+    return `v${floor(version/1000)}.${floor(version%1000/10)}.${floor(version%10)}`
+}
+
 function setInfo(data) {
     
     var name = data.name;
@@ -23,7 +30,7 @@ function setInfo(data) {
     var dayVersion = data.dayVersion;
     var url = atob(data.downloadUrl);
     
-    var displayVersion = `v${floor(version/1000)}.${floor(version%1000/10)}.${floor(version%10)}`
+    var displayVersion = getDisplayVersion(version);
     var splits = buildDate.split("/");
     var year = splits[0];
     var month = dformat(splits[1], 2);
