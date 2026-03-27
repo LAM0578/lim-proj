@@ -15,9 +15,9 @@ const backToMainPageButton = document.getElementById("BackToMainPageButton");
 var refreshRotate = 0;
 var roteteTimeout = null;
 
-function getDisplayVersion(verison) {
-    if (verison >= 0x010000) {
-        return `${verison >> 16 & 0xff}.${verison >> 8 & 0xff}.${verison & 0xff}`
+function getDisplayVersion(version) {
+    if (version >= 0x010000) {
+        return `${version >> 16 & 0xff}.${version >> 8 & 0xff}.${version & 0xff}`
     }
     return `v${floor(version/1000)}.${floor(version%1000/10)}.${floor(version%10)}`
 }
