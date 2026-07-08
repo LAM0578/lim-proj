@@ -1,4 +1,5 @@
 const url = "https://aa.huoyan1231.org:445/files/version";
+const urlBackup = "https://version-checker-1256917084.cos.ap-shanghai.myqcloud.com/version.json";
 
 const downloadContainer = document.getElementById("DownloadContainer");
 const refreshButton = document.getElementById("RefreshButton");
@@ -14,9 +15,10 @@ const backToMainPageButton = document.getElementById("BackToMainPageButton");
 
 var refreshRotate = 0;
 var roteteTimeout = null;
+var requestBackup = true;
 
 function getDisplayVersion(version) {
-    if (version >= 0x010000) {
+    if (version >= 0x010000) { // 1.0.0
         return `${version >> 16 & 0xff}.${version >> 8 & 0xff}.${version & 0xff}`
     }
     return `v${floor(version/1000)}.${floor(version%1000/10)}.${floor(version%10)}`
@@ -47,18 +49,50 @@ function setInfo(data) {
     </a>`;
 }
 
+function fetchAndSetCookie(url, headers=undefined) {
+    try {
+        (headers === undefined
+            ? fetch(url)
+            : fetch(
+                url,
+                { headers }
+            )
+        )
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            requestBackup = false;
+            setInfo(data);
+            setCookie("aa-version", JSON.stringify(data), 0.5);
+        })
+        .finally(() => {
+            if (requestBackup) {
+                requestBackup = false;
+                getVersionAndSetCoockieUseBackupURL();
+            }
+        })
+    }
+    catch (error) {
+        requestBackup = true;
+    }
+}
+
+function getVersionAndSetCoockieUseBackupURL() {
+    console.log("Failed to check for updates using the primary URL. Trying the backup URL to check for updates.");
+    fetchAndSetCookie(urlBackup, { "arcade-alpha": "request-resources" });
+}
+
 function getVersionAndSetCoockie() {
-    fetch(url)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        setInfo(data);
-        setCookie("aa-version", JSON.stringify(data), 0.5);
-    })
+    try {
+        fetchAndSetCookie(url);
+    }
+    catch (error) {
+        getVersionAndSetCoockieUseBackupURL();
+    }
 }
 
 function updateScale() {
