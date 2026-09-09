@@ -53,7 +53,8 @@ const questions = [
     flick(0,1.25,0.00,0.00,1.00);
     `,
     `Arc无视染色的条件是什么？（请详细描述）`,
-    `邻轨判定的范围和什么有关？`
+    `邻轨判定的范围和什么有关？`,
+    `洞烛 (Nullified) 的技能在生效时的总侵蚀量是多少？`
 ]
 
 const isFireFox = navigator.userAgent.toLowerCase().includes('firefox');
