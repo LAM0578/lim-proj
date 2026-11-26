@@ -5,13 +5,11 @@
 }
 
 @media (orientation: landscape) {
-    body {
-        display: grid;
-        justify-items: center;
-    }
-
     #mainContainer {
-        width: min(100%, 700px);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(100vw, 700px);
     }
 }
 
