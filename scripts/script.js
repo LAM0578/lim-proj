@@ -26,7 +26,7 @@ function getArcCoverMakerFileNames(version) {
 let lastest = document.getElementById("lasestVersionContainer");
 let other = document.getElementById("otherReleasesContainer");
 const versions = [
-    100, 110, 120, 130, 140, 150
+    130, 140, 150
 ];
 
 let lastedRelease = versions[versions.length - 1];
@@ -87,8 +87,7 @@ for (let i = otherReleases.length - 1; i >= 0; i--) {
     appendItem(other, e, i == 0);
 }
 
-
-if (true || isFireFox && !isAppleWebKit) {
+if (isFireFox && !isAppleWebKit) {
     const body = document.body;
     const container = document.getElementById("scrollbar-container");
     const height = window.innerHeight;

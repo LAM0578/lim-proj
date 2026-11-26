@@ -5,7 +5,7 @@ const names = [
     'idlabel',
     'smalltitle',
     'github',
-    'datnightbtnstyle',
+    'daynightbtnstyle',
     'bodystyle',
     'scrollbar-container',
     'dayicon',
@@ -19,10 +19,12 @@ for (const name of names) {
     elementItems.push(document.getElementsByClassName(name))
 }
 
-let isNightMode = true;
+let delayTimeout = undefined;
+
+let isNightMode = getCookie("nightMode") !== "false";
 function setDayNight() {
     for (const elements of elementItems) {
-        for (i = 0; i < elements.length; i++) {
+        for (let i = 0; i < elements.length; i++) {
             elements.item(i).classList.toggle('day-mode');
         }
     }

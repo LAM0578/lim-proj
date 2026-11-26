@@ -1,22 +1,25 @@
 * {
     -webkit-text-size-adjust: none;
-    /* max-width: 600px; */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-/* #mainContainer {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-} */
+@media (orientation: landscape) {
+    body {
+        display: grid;
+        justify-items: center;
+    }
+
+    #mainContainer {
+        width: min(100%, 700px);
+    }
+}
 
 .topstyle {
     position: sticky;
     color: #fdfdfd;
     font-family: sans-serif;
     font-style: normal;
-    /* line-height: 5px; */
     height: auto;
     width: auto;
     letter-spacing: 0.5;
@@ -107,28 +110,38 @@ a {
 }
 
 .scrollbar-container {
-    background-color: #0b0b0b;
+    position: relative;
     width: 100%;
     height: calc(100% - 55px);
     border-radius: 35px;
-    overflow: auto;
-    clip-path: view-box;
+    overflow: hidden;
+    isolation: isolate;
 }
 
-.scrollbar-container.day-mode {
+.scrollbar-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #0b0b0b;
+    transition: background-color 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.scrollbar-container.day-mode::before {
     background-color: #f0f0f0;
 }
 
 .scrollbar-content {
     position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-.datnightbtnstyle {
+.daynightbtnstyle {
     background-color: #252525;
     border-color: #252525;
     /* border-style: hidden; */
@@ -144,7 +157,7 @@ a {
     display: flex;
 }
 
-.datnightbtnstyle.day-mode {
+.daynightbtnstyle.day-mode {
     background-color: #fdfdfd;
     border-color: #fdfdfd;
     color: #252525;
