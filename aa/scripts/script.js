@@ -1,4 +1,3 @@
-const url = "https://aa.huoyan1231.org:445/files/version";
 const urlBackup = "https://version-checker-1256917084.cos.ap-shanghai.myqcloud.com/version.json";
 
 const downloadContainer = document.getElementById("DownloadContainer");
@@ -69,30 +68,14 @@ function fetchAndSetCookie(url, headers=undefined) {
             setInfo(data);
             setCookie("aa-version", JSON.stringify(data), 0.5);
         })
-        .finally(() => {
-            if (requestBackup) {
-                requestBackup = false;
-                getVersionAndSetCoockieUseBackupURL();
-            }
-        })
     }
     catch (error) {
         requestBackup = true;
     }
 }
 
-function getVersionAndSetCoockieUseBackupURL() {
-    console.log("Failed to check for updates using the primary URL. Trying the backup URL to check for updates.");
-    fetchAndSetCookie(urlBackup, { "arcade-alpha": "request-resources" });
-}
-
 function getVersionAndSetCoockie() {
-    try {
-        fetchAndSetCookie(url);
-    }
-    catch (error) {
-        getVersionAndSetCoockieUseBackupURL();
-    }
+    fetchAndSetCookie(urlBackup, { "arcade-alpha": "request-resources" });
 }
 
 function updateScale() {

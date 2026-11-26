@@ -26,7 +26,7 @@ function getArcCoverMakerFileNames(version) {
 let lastest = document.getElementById("lasestVersionContainer");
 let other = document.getElementById("otherReleasesContainer");
 const versions = [
-    100, 110, 120, 130, 140
+    100, 110, 120, 130, 140, 150
 ];
 
 let lastedRelease = versions[versions.length - 1];
